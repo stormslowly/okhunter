@@ -87,9 +87,9 @@ object-assign@^4.1.1:
   version "4.1.1"
   resolved "http://registry.npm.taobao.org/object-assign/download/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
-okcoin-ws@^0.0.3:
+okcoin-ws@stormslowly/okcoin-ws:
   version "0.0.3"
-  resolved "http://registry.npm.taobao.org/okcoin-ws/download/okcoin-ws-0.0.3.tgz#799642918804b9ec4bb009bb7524eb40a5858575"
+  resolved "https://codeload.github.com/stormslowly/okcoin-ws/tar.gz/274b154a52b0773a7cf6b4329a77d411078c82c4"
   dependencies:
     MD5 "^1.2.1"
     ws "^0.5.0"

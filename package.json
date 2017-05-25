@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
-    "okcoin-ws": "^0.0.3"
+    "okcoin-ws": "stormslowly/okcoin-ws"
   },
   "scripts": {
     "build": "tsc",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/node": "^7.0.18",
+    "@types/ws": "0.0.41",
     "ts-node": "^3.0.4",
     "typescript": "^2.3.2"
   }

@@ -35,14 +35,23 @@ class Spot {
 
 }
 
+let lastPrice = 10000
 
 client.subscribe({
   'ok_sub_spotcny_btc_depth_20': function (info) {
-    console.log(`asks:\n`, info.asks);
-    console.log(`bids:\n`, info.bids);
+    // console.log(`asks:\n`, info.asks);
+    // console.log(`bids:\n`, info.bids);
     const spot = new Spot(info);
-    console.log(`gap`, spot.gap());
+    console.log(`gap`, spot.gap()/lastPrice,spot.gap());
+  },
 
+  'ok_sub_spotcny_btc_ticker': function (info) {
+    console.log(`last`, info.last);
+    lastPrice = Number(info.last)
   }
 });
 
+
+// client.ws.on('open',function(){
+//   client.login()
+// })
