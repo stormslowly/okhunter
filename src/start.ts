@@ -1,6 +1,6 @@
-import * as OKCoin from 'okcoin-ws';
 import {last} from 'lodash';
-// const OKCoin = require('okcoin-ws');
+
+import  OKCoin from './okcoin-ws';
 
 import {key, secret} from './secret'
 
@@ -39,12 +39,9 @@ let lastPrice = 10000
 
 client.subscribe({
   'ok_sub_spotcny_btc_depth_20': function (info) {
-    // console.log(`asks:\n`, info.asks);
-    // console.log(`bids:\n`, info.bids);
     const spot = new Spot(info);
     console.log(`gap`, spot.gap()/lastPrice,spot.gap());
   },
-
   'ok_sub_spotcny_btc_ticker': function (info) {
     console.log(`last`, info.last);
     lastPrice = Number(info.last)
@@ -52,6 +49,6 @@ client.subscribe({
 });
 
 
-// client.ws.on('open',function(){
-//   client.login()
-// })
+client.ws.on('open',function(){
+  client.login()
+})

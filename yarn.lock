@@ -2,11 +2,17 @@
 # yarn lockfile v1
 
 
-"@types/node@^7.0.18":
+"@types/node@*", "@types/node@^7.0.18":
   version "7.0.18"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-7.0.18.tgz#cd67f27d3dc0cfb746f0bdd5e086c4c5d55be173"
 
-MD5@^1.2.1:
+"@types/ws@^0.0.41":
+  version "0.0.41"
+  resolved "http://registry.npm.taobao.org/@types/ws/download/@types/ws-0.0.41.tgz#88a7e0cd1605bd6ea773110954671394c690db1a"
+  dependencies:
+    "@types/node" "*"
+
+MD5@^1.2.1, MD5@^1.3.0:
   version "1.3.0"
   resolved "http://registry.npm.taobao.org/MD5/download/MD5-1.3.0.tgz#3cc266f0e89abb6b43a50f39a459df5bfde0b240"
   dependencies:
@@ -98,6 +104,10 @@ options@>=0.0.5:
   version "0.0.6"
   resolved "http://registry.npm.taobao.org/options/download/options-0.0.6.tgz#ec22d312806bb53e731773e7cdaefcf1c643128f"
 
+safe-buffer@~5.0.1:
+  version "5.0.1"
+  resolved "http://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
+
 source-map-support@^0.4.0:
   version "0.4.15"
   resolved "http://registry.npm.taobao.org/source-map-support/download/source-map-support-0.4.15.tgz#03202df65c06d2bd8c7ec2362a193056fef8d3b1"
@@ -156,6 +166,10 @@ ultron@1.0.x:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/ultron/download/ultron-1.0.2.tgz#ace116ab557cd197386a4e88f4685378c8b2e4fa"
 
+ultron@~1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/ultron/download/ultron-1.1.0.tgz#b07a2e6a541a815fc6a34ccd4533baec307ca864"
+
 user-home@^1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/user-home/download/user-home-1.1.1.tgz#2b5be23a32b63a7c9deb8d0f28d485724a3df190"
@@ -173,6 +187,13 @@ ws@^0.5.0:
     nan "1.4.x"
     options ">=0.0.5"
     ultron "1.0.x"
+
+ws@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/ws/download/ws-3.0.0.tgz#98ddb00056c8390cb751e7788788497f99103b6c"
+  dependencies:
+    safe-buffer "~5.0.1"
+    ultron "~1.1.0"
 
 yn@^1.2.0:
   version "1.3.0"
