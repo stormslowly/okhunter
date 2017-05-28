@@ -16,7 +16,7 @@ module.exports = {
       host: "weibus",
       ref: "origin/master",
       repo: "git@github.com:stormslowly/okhunter.git",
-      path: "/var/www/production",
+      path: "/root/okhunte",
       "post-deploy": "npm run build && pm2 startOrRestart ecosystem.config.js --env production"
     }
   }
