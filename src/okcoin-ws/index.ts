@@ -35,13 +35,10 @@ export default class OKCoin {
     this.ws = ws;
 
     ws.on('open', () => {
-
       this.login()
-
       this.pingInterval = setInterval(() => {
         this.ping()
       }, 5000)
-
 
       const data: AddChannelEvent[] = [];
       Object.keys(channels).forEach(name => {
@@ -79,7 +76,6 @@ export default class OKCoin {
           return;
         }
 
-
         if (message['errorcode']) {
           message['errormessage'] = errorMessage(message['errorcode']);
           callback(null, message);
@@ -89,6 +85,11 @@ export default class OKCoin {
         }
       });
     });
+
+    ws.on('close', () => {
+      clearInterval(this.pingInterval)
+      process.exit()
+    })
   }
 
   private addChannel(channel: string, params?: any) {
