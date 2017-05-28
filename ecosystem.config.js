@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "dataHunter",
-      script: "start.js",
+      script: "dist/start.js",
       env: {},
       env_production: {
         NODE_ENV: "production"
