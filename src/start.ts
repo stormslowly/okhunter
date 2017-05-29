@@ -12,8 +12,8 @@ const client = new OKCoin("cn", key, secret);
 mongoose.connect('mongodb://localhost/okcoin')
 
 interface SpotLine {
-  0: number
-  1: number
+  price: number
+  vol: number
 }
 
 class Spot {
@@ -40,20 +40,13 @@ class Spot {
 
 }
 
-let lastPrice = 10000
-
 
 client.subscribe({
   'ok_sub_spotcny_btc_depth_20': function (info) {
-    console.log(info)
     const spot = new Spot(info);
-    console.log(`gap`, spot.gap() / lastPrice, spot.gap());
-
     new OrderBook({timestamp: info.timestamp, asks: spot.asks, bids: spot.bids}).save()
   },
   'ok_sub_spotcny_btc_ticker': function (info) {
-    console.log(`last`, info);
-    lastPrice = Number(info.last)
     new Ticker(info).save()
   }
 });
