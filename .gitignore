@@ -1,5 +1,6 @@
 node_modules
 .idea/
 src/secret.js
+src/mongo.config.js
 dist/
 npm-debug.log

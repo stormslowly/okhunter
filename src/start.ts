@@ -6,10 +6,12 @@ import {Ticker} from './models/ticker';
 import {OrderBook} from './models/orderBook';
 
 import {key, secret} from './secret'
+import {uri} from './mongo.config'
+
 
 const client = new OKCoin("cn", key, secret);
 
-mongoose.connect('mongodb://localhost/okcoin')
+mongoose.connect(uri)
 
 interface SpotLine {
   price: number
